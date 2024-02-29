@@ -80,8 +80,8 @@ p {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 10px 0;
-    background-color: rgb(179, 240, 255);
+    margin: 18px 0;
+    background-color: rgb(139, 191, 204);
     align-items: baseline;
 }
 
@@ -100,7 +100,7 @@ p {
 }
 
 .caja p {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .Enlaces{
