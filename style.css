@@ -1,118 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&family=Zeyada&display=swap');
 
-header{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-background-color: rgb(255, 239, 239);
-width:100%
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header a{
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(255, 239, 239);
+    width: 100%;
+}
+
+header a {
     text-decoration: none;
 }
-header ul{
+
+header ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-header ul li{
+header ul li {
     margin: 12px;
 }
 
-header img{
+header img {
     width: 140px;
-    
 }
 
-
-#nosotros{
-   width: 100%; 
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-}
-
-#nosotros{
-    padding: 10px;
-    margin: 10px;
-
-}
-
-#home{
-    width: 100%; 
+#nosotros,
+#home {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-
-}
-
-#home{
-
     padding: 10px;
     margin: 10px;
-
-}
-img{
-width: 150px;
 }
 
+img {
+    width: 150px;
+}
 
-
-h1{
+h1 {
     font-size: 40px;
-    color:rgb(16, 16, 83);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(16, 16, 83);
 }
 
-h2{
-    font-size: 30px;
-    color: black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-p{
+h2,
+p {
     font-size: 23px;
     color: black;
-    font-style: inherit;
 }
 
-
-.content{
+.content {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 10px 0 10px 0;
+    margin: 10px 0;
     background-color: rgb(255, 255, 255);
-    align-content: center;
-    align-items: center
-    
+    align-items: center;
 }
 
-.content p{
-
+.content p {
     font-family: "Sue Ellen Francisco", cursive;
     font-weight: 400;
     font-style: normal;
 }
-.content img{
-border-radius: 90%;
 
+.content img {
+    border-radius: 90%;
 }
 
-.contenedor{
-
+.contenedor {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 10px 0 10px 0;
-    background-color:rgb(255, 255, 255);
-    align-items: baseline
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    align-items: baseline;
 }
 
-.caja{
+.caja {
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -122,10 +95,10 @@ border-radius: 90%;
     align-items: center;
 }
 
-.caja img{
+.caja img {
     border-radius: 80%;
 }
 
-.caja p{
+.caja p {
     font-size: 18px;
 }
