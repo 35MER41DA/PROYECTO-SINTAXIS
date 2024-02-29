@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk:MORF,SHLN@21,23.4&family=Sue+Ellen+Francisco&family=Zeyada&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&family=Zeyada&display=swap');
+
 header{
 display: flex;
 flex-direction: row;
@@ -27,12 +28,6 @@ header img{
 }
 
 
-
-#PRODUCTOSP{
-    padding: 10px;
-    margin: 10px;
-
-}
 #nosotros{
    width: 100%; 
    display: flex;
