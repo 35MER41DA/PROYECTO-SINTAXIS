@@ -81,7 +81,7 @@ p {
     flex-direction: row;
     width: 100%;
     margin: 10px 0;
-    background-color: rgb(238, 116, 230);
+    background-color: rgb(179, 240, 255);
     align-items: baseline;
 }
 
@@ -101,4 +101,13 @@ p {
 
 .caja p {
     font-size: 18px;
+}
+
+.enlaces{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+    background-color: rgb(255, 239, 239);
+    align-items: center;
 }
