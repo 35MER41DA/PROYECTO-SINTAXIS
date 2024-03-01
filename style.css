@@ -67,6 +67,11 @@ p {
     align-items: center;
 }
 
+.pres{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .content p {
     font-family: "Sue Ellen Francisco", cursive;
     font-weight: 400;
