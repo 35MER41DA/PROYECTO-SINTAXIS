@@ -1,97 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>Letreros RE Luminosos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinttaxis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #a32d2d;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            
+        }
+
+        header h2{
+            color: #525050;
+        }
+
+        header img{
+            width: 80px;
+            border-radius: 50%;
+        }
+        header .brand {
+            text-align: right;
+        }
+
+
+        nav {
+            background-color: #a73e3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        section {
+            padding: 60px;
+        }
+
+        section h2 {
+            color: #007bff;
+        }
+
+        section p {
+            color: #6c757d;
+        }
+
+        .carousel-inner img {
+            border-radius: 10px;
+        }
+
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team-member {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            border: 4px solid #007bff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1);
+        }
+
+        .testimonial {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
-            <div>
-              <img src="./SINFONDO.png" alt="logo">
-            </div>
-            <div>
-             <nav>
-                <ul>
-                    <a href="#home"><li>HOME</li></a>
-                    <a href="#nosotros"><li>NOSOTROS</li></a>
-                    <a href="#PRODUCTOSP"><li>PRODUCTOS PERSONALIZADOS</li></a>
-                    <a href="#novedades"><li>NOVEDADES</li></a>
-                    <a href="https://www.facebook.com/profile.php?id=100023131505132"><li>CONTACTANOS</li></a>
-                    
-                </ul>
-             </nav>
-           </div>
-    </header>
-
-    <div id="PRODUCTOSP" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="D_NQ_NP_2X_670376-MLM70205670004_062023-F.webp" alt="Letrero" class="d-block w-100">
-            </div>
-    
-            <div class="carousel-item">
-                <img src="Nuestra Boda.jpg" alt="Boda" class="d-block w-100">
-            </div>
-    
-            <div class="carousel-item">
-                <img src="D_NQ_NP_921272-MLM70562324447_072023-O.webp" alt="Letrero" class="d-block w-100">
-            </div>
+        <div>
+            <img src="./imagenes/logo.jpg" alt="logo">
         </div>
-    
-        <button class="carousel-control-prev" type="button" data-bs-target="#PRODUCTOSP" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-    
-        <button class="carousel-control-next" type="button" data-bs-target="#PRODUCTOSP" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
-    </div>
-    
-   
-    <div id="home" class="content">
-        <div class="pres">
-            <h1>Letreros RE Luminosos</h1>
-            <h3>¡Bienvenido a nuestra tienda virtual, donde la creatividad y la iluminación se fusionan para dar vida a tus ideas!</h3>
-            <h4>¿Quienes somos?</h4>
-            <p>Una tienda especializada en letreros luminosos de última generación con tecnología LED. Nos dedicamos a ofrecer soluciones innovadoras y personalizadas para destacar tu negocio o evento. Nuestro equipo está comprometido con la calidad, el diseño creativo y la atención al cliente. Trabajamos mano a mano contigo para crear letreros luminosos que no solo iluminan, sino que también comunican la esencia única de tu marca. Ya sea para publicidad exterior, señalización interior o eventos especiales, estamos aquí para hacer brillar tu mensaje con luz LED.</p>
+        <div><h2>Sinttaxis</h1>
+            <h4>Arquitectura e Ingeniería</h3>
         </div>
         
-    </div>
-  <div id="novedades" class="contenedor">
-    <div class="caja">
-        <img src="./diseño personalizado.jpg" alt="Personalización">
-        <h2>Diseños personalizados</h2>
-        <p>Elige el diseño, tamaño y color perfectos; agrega tu toque único a cada letrero.</p>
-    </div>
+    </header>
 
-   <div class="caja">
-        <img src="./calidad.jpg" alt="alta calidad">
-        <h2>Alta Calidad</h2>
-        <p>Garantizamos una fabricación precisa y duradera, utilizando tecnología LED eficiente para brindar un brillo espectacular.</p> 
-   </div>
+    <nav>
+        <a href="#inicio">Inicio</a> |
+        <a href="#proyectos">Proyectos</a> |
+        <a href="#servicios">Servicios</a> |
+        <a href="#equipo">Equipo</a> |
+        <a href="#testimonios">Testimonios</a> |
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-   <div class="caja">
-        <img src="./envio.jpg" alt="envios">
-        <h2>Envíos rápidos y seguros</h2>
-        <p>A todo México sin mínimos de compra.</p> 
-   </div>
- </div>
+    <section id="inicio">
+        <h2>Bienvenido a nuestro sitio web sobre arquitectura</h2>
+    </section>
 
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <p>Ofrecemos una amplia gama de servicios arquitectónicos para satisfacer tus necesidades.</p>
+        <ul class="services-list">
+            <li><i class="fas fa-home"></i> Diseño arquitectónico</li>
+            <li><i class="fas fa-city"></i> Planificación urbana</li>
+            <li><i class="fas fa-hard-hat"></i> Consultoría en construcción</li>
+            <li><i class="fas fa-paint-brush"></i> Diseño de interiores</li>
+            <li><i class="fas fa-leaf"></i> Sostenibilidad ambiental</li>
+        </ul>
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./imagenes/proyecto LEVR A.jpg" class="d-block w-100" alt="Proyecto 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/Proyecto LEVR B.jpg" class="d-block w-100" alt="Proyecto 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/Proyecto LEVR c.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/Proyecto LEVR D.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/Proyecto LEVR 2.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/proyecto LEVR fachada.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/proyecto LEVR Jardin.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./imagenes/proyecto LEVR.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
 
-   <div id="nosotros" class="Enlaces">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.4021753645884!2d-98.21119148972775!3d19.001991854218364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf59b0956a4b%3A0xb346d09d9226f8f5!2sPrivada%2063%20f%20Ote.%201228%2C%20Loma%20Linda%2C%2072477%20Heroica%20Puebla%20de%20Zaragoza%2C%20Pue.!5e0!3m2!1ses!2smx!4v1709093308683!5m2!1ses!2smx" width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/Hd2d6Rif9OU?si=mvVKvdltzCufgrco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
 
-   <footer>
-    <p>Conoce nuestra politica de privacidad|©2024 Letreros Luminosos RE®. Todos los derechos reservados.  </p>
-   </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-   
+    <section id="proyectos">
+        <h2>Nuestros Proyectos</h2>
+        <div id="proyectoCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagen1.jpg" class="d-block w-100" alt="Proyecto 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagen2.jpg" class="d-block w-100" alt="Proyecto 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagen3.jpg" class="d-block w-100" alt="Proyecto 3">
+                </div>
+                <!-- Puedes agregar más imágenes según sea necesario -->
+            </div>
+            <a class="carousel-control-prev" href="#proyectoCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#proyectoCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="equipo">
+        <h2>Nuestro Equipo</h2>
+        <div class="row">
+            <div class="col-md-4 team-member">
+                <img src="equipo1.jpg" alt="Miembro del equipo 1">
+                <h4>Nombre del Arquitecto</h4>
+                <p>Arquitecto Principal</p>
+            </div>
+            <div class="col-md-4 team-member">
+                <img src="equipo2.jpg" alt="Miembro del equipo 2">
+                <h4>Nombre del Arquitecto</h4>
+                <p>Diseñador de Interiores</p>
+            </div>
+            <div class="col-md-4 team-member">
+                <img src="equipo3.jpg" alt="Miembro del equipo 3">
+                <h4>Nombre del Arquitecto</h4>
+                <p>Consultor en Construcción</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <h2>Testimonios de Clientes</h2>
+        <div id="testimoniosCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial">
+                        <p>"Excelente servicio y atención al cliente. ¡Altamente recomendado!"</p>
+                        <p>- Cliente Satisfecho 1</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <p>"El equipo de arquitectos superó nuestras expectativas. Estamos encantados con el resultado final."</p>
+                        <p>- Cliente Satisfecho 2</p>
+                    </div>
+                </div>
+                <!-- Puedes agregar más testimonios según sea necesario -->
+            </div>
+            <a class="carousel-control-prev" href="#testimoniosCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#testimoniosCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¡Contáctanos para discutir tus proyectos y requisitos arquitectónicos!</p>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sitio web de Arquitectura</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
