@@ -167,8 +167,8 @@
     </style>
 </head>
 <body>
-    <div class="full-page-logo">
-        <a href="#inicio">
+    <div class="full-page-logo" id="logoContainer">
+        <a href="#inicio" onclick="hideLogo()">
             <img src="./logo.jpg" alt="logo">
         </a>
     </div>
@@ -345,7 +345,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function hideLogo() {
+            document.getElementById('logoContainer').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
-
-
