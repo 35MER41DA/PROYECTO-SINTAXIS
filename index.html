@@ -15,17 +15,19 @@
             color: #495057;
         }
 
-        .full-page-logo {
+        .full-page-carousel {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #ffffff;
+            position: relative;
         }
 
-        .full-page-logo img {
+        .full-page-carousel img {
             max-width: 100%;
             max-height: 100%;
+            cursor: pointer;
         }
 
         header {
@@ -167,10 +169,43 @@
     </style>
 </head>
 <body>
-    <div class="full-page-logo" id="logoContainer">
-        <a href="#inicio" onclick="hideLogo()">
-            <img src="./logo.jpg" alt="logo">
-        </a>
+    <div class="full-page-carousel" id="carouselContainer">
+        <div id="inicioCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./proyecto LEVR A.jpg" class="d-block w-100" alt="Imagen 1" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Proyecto LEVR B.jpg" class="d-block w-100" alt="Imagen 2" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Proyecto LEVR c.jpg" class="d-block w-100" alt="Imagen 3" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Proyecto LEVR D.jpg" class="d-block w-100" alt="Imagen 4" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Proyecto LEVR 2.jpg" class="d-block w-100" alt="Imagen 5" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./proyecto LEVR fachada.jpg" class="d-block w-100" alt="Imagen 6" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./proyecto LEVR Jardin.jpg" class="d-block w-100" alt="Imagen 7" onclick="hideCarousel()">
+                </div>
+                <div class="carousel-item">
+                    <img src="./proyecto LEVR.jpg" class="d-block w-100" alt="Imagen 8" onclick="hideCarousel()">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#inicioCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#inicioCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
     </div>
 
     <header>
@@ -346,9 +381,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        function hideLogo() {
-            document.getElementById('logoContainer').style.display = 'none';
+        function hideCarousel() {
+            document.getElementById('carouselContainer').style.display = 'none';
         }
     </script>
 </body>
 </html>
+
