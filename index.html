@@ -33,14 +33,16 @@
 
         .carousel-caption {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align:center;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
             font-family: 'Montserrat', sans-serif;
-            font-size: 5em;
+            font-size: 2em;
             font-weight: bold;
             color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .carousel-caption .red {
@@ -89,6 +91,11 @@
 
         section {
             padding: 60px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
         }
 
         section h2 {
@@ -262,15 +269,15 @@
     </header>
 
     <nav>
-        <a href="#inicio">Inicio</a> |
-        <a href="#proyectos">Proyectos</a> |
-        <a href="#servicios">Servicios</a> |
-        <a href="#equipo">Equipo</a> |
-        <a href="#testimonios">Testimonios</a> |
-        <a href="#contacto">Contacto</a>
+        <a href="#inicio" onclick="showSection('inicio')">Inicio</a> |
+        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a> |
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a> |
+        <a href="#equipo" onclick="showSection('equipo')">Equipo</a> |
+        <a href="#testimonios" onclick="showSection('testimonios')">Testimonios</a> |
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
 
-    <section id="inicio">
+    <section id="inicio" class="active">
         <h2>Bienvenidos a Sinttaxis</h2>
         <p>Somos un estudio de arquitectura comprometido con la excelencia en el diseño y la construcción.</p>
     </section>
@@ -313,6 +320,11 @@
                 <span class="sr-only">Siguiente</span>
             </a>
         </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <p>Ofrecemos una amplia gama de servicios arquitectónicos para satisfacer tus necesidades.</p>
     </section>
 
     <section id="equipo">
@@ -393,6 +405,17 @@
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
         }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('inicio'); // Show the initial section
+        });
     </script>
 </body>
 </html>
