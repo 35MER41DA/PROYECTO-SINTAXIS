@@ -69,6 +69,7 @@
         }
 
         nav.vertical-menu {
+            display: none;
             background-color: #a73e3e;
             color: #fff;
             padding: 20px;
@@ -203,7 +204,7 @@
         <div id="inicioCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./proyecto LEVR A.jpg" class="d-block w-100" alt="Imagen 1" onclick="hideCarousel()">
+                    <img src="./proyecto LEVR A.jpg" class="d-block w-100" alt="Imagen 1" onclick="toggleMenu()">
                 </div>
                 <!-- Otras imágenes del carousel -->
             </div>
@@ -254,8 +255,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        function hideCarousel() {
-            document.getElementById('carouselContainer').style.display = 'none';
+        function toggleMenu() {
+            var menu = document.getElementById('verticalMenu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
         }
 
         function showSection(sectionId) {
@@ -265,14 +267,10 @@
             document.getElementById(sectionId).classList.add('active');
         }
 
-        function toggleMenu() {
-            var menu = document.getElementById('verticalMenu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             showSection('inicio'); // Show the initial section
         });
     </script>
 </body>
 </html>
+
