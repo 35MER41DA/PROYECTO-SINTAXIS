@@ -77,7 +77,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            
+            display: none;
         }
 
         nav a {
@@ -94,7 +94,6 @@
          background-color: rgba(255, 255, 255, 0.1);
          border-bottom-color: #007bff;
         }
-
 
         section {
             padding: 60px;
@@ -197,6 +196,10 @@
         form button:hover {
             background-color: #0056b3;
         }
+
+        .review-form {
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -251,7 +254,7 @@
         </div> 
     </header>
 
-    <nav>
+    <nav id="mainNav">
         <a href="#inicio" onclick="showSection('inicio')">Inicio</a> |
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a> |
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a> |
@@ -326,6 +329,16 @@
             <p>"Resultados excepcionales en cada proyecto."</p>
             <p>- Otro Cliente Satisfecho</p>
         </div>
+        <div class="review-form">
+            <h3>Escribe una reseña</h3>
+            <form id="reviewForm" onsubmit="addReview(event)">
+                <label for="reviewerName">Nombre:</label>
+                <input type="text" id="reviewerName" name="reviewerName" required>
+                <label for="reviewerMessage">Reseña:</label>
+                <textarea id="reviewerMessage" name="reviewerMessage" rows="4" required></textarea>
+                <button type="submit">Enviar Reseña</button>
+            </form>
+        </div>
     </section>
 
     <section id="contacto">
@@ -348,6 +361,7 @@
     <script>
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
+            document.getElementById('mainNav').style.display = 'block';
         }
 
         function showSection(id) {
@@ -356,6 +370,22 @@
                 section.classList.remove('active');
             });
             document.getElementById(id).classList.add('active');
+        }
+
+        function addReview(event) {
+            event.preventDefault();
+            const reviewerName = document.getElementById('reviewerName').value;
+            const reviewerMessage = document.getElementById('reviewerMessage').value;
+
+            const testimonialContainer = document.createElement('div');
+            testimonialContainer.className = 'testimonial';
+            testimonialContainer.innerHTML = `
+                <p>"${reviewerMessage}"</p>
+                <p>- ${reviewerName}</p>
+            `;
+
+            document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
+            document.getElementById('reviewForm').reset();
         }
     </script>
 
