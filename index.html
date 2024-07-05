@@ -146,6 +146,15 @@
             margin-bottom: 30px;
         }
 
+        .testimonial p {
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author {
+            font-style: italic;
+            color: #888;
+        }
+
         footer {
             background-color: #343a40;
             color: #fff;
@@ -317,25 +326,33 @@
 
     <section id="reseñas">
         <h2>Reseñas</h2>
-        <div class="testimonial">
+        <div class="testimonial" id="testimonial1">
             <p>"Excelente servicio y profesionalismo."</p>
-            <p>- Cliente Satisfecho</p>
+            <p class="testimonial-author">- Cliente Satisfecho</p>
         </div>
-        <div class="testimonial">
+        <div class="testimonial" id="testimonial2">
             <p>"Resultados excepcionales en cada proyecto."</p>
-            <p>- Otro Cliente Satisfecho</p>
+            <p class="testimonial-author">- Otro Cliente Satisfecho</p>
         </div>
+        <h3>Escribe tu reseña</h3>
+        <form id="reviewForm" onsubmit="submitReview(event)">
+            <label for="review">Tu reseña:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+            <label for="name">Tu nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
         <form>
             <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="contact-name" name="name">
             <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="contact-email" name="email">
             <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+            <textarea id="contact-message" name="message" rows="4"></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
@@ -355,6 +372,30 @@
                 section.classList.remove('active');
             });
             document.getElementById(id).classList.add('active');
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+            const review = document.getElementById('review').value;
+            const name = document.getElementById('name').value;
+
+            // Create new testimonial element
+            const testimonialCount = document.querySelectorAll('.testimonial').length + 1;
+            const newTestimonial = document.createElement('div');
+            newTestimonial.classList.add('testimonial');
+            newTestimonial.innerHTML = `
+                <p>"${review}"</p>
+                <p class="testimonial-author">- ${name}</p>
+            `;
+            newTestimonial.id = `testimonial${testimonialCount}`;
+
+            // Insert new testimonial before the review form
+            const reviewForm = document.getElementById('reviewForm');
+            reviewForm.parentNode.insertBefore(newTestimonial, reviewForm);
+
+            // Clear form inputs
+            document.getElementById('review').value = '';
+            document.getElementById('name').value = '';
         }
     </script>
 
