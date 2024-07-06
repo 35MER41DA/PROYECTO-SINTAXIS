@@ -59,6 +59,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
         }
 
         header h2 {
@@ -154,6 +155,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            display: none;
         }
 
         form {
@@ -245,7 +247,7 @@
         </div>
     </div>
 
-    <header>
+    <header id="header">
         <div>
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="IMAGOTIPO TT" style="width: 100px; border-radius: 50%;">
         </div>
@@ -263,9 +265,13 @@
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
 
-    <section id="inicio" class="active">
+    <section id="inicio">
         <h2>Inicio</h2>
         <p>Bienvenido a nuestro sitio web.</p>
+        <h3>Filosofía</h3>
+        <p>Nuestra filosofía se basa en la innovación y la excelencia.</p>
+        <h3>Visión</h3>
+        <p>Queremos transformar el mundo a través de soluciones arquitectónicas sostenibles.</p>
     </section>
 
     <section id="proyectos">
@@ -354,14 +360,20 @@
         </form>
     </section>
 
-    <footer>
+    <footer id="footer">
         <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
     </footer>
 
     <script>
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
+            document.getElementById('header').style.display = 'block';
             document.getElementById('mainNav').style.display = 'block';
+            document.getElementById('footer').style.display = 'block';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
         }
 
         function showSection(id) {
