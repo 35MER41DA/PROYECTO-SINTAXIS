@@ -59,7 +59,6 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: none;
         }
 
         header h2 {
@@ -265,7 +264,7 @@
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
 
-    <section id="inicio">
+    <section id="inicio" class="active">
         <h2>Inicio</h2>
         <p>Bienvenido a nuestro sitio web.</p>
         <h3>Filosofía</h3>
@@ -367,7 +366,6 @@
     <script>
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
-            document.getElementById('header').style.display = 'block';
             document.getElementById('mainNav').style.display = 'block';
             document.getElementById('footer').style.display = 'block';
             const sections = document.querySelectorAll('section');
