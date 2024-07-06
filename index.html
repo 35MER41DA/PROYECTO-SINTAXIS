@@ -55,7 +55,7 @@
             background-color: #ffffff;
             color: #a32d2d;
             padding: 20px;
-            display: flex;
+            display: none; /* Ocultar el encabezado al cargar la página */
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,27 +77,27 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            display: none;
+            display: none; /* Ocultar el menú de navegación al cargar la página */
         }
 
         nav a {
-         color: #fff;
-         text-decoration: none;
-         margin: 0 10px;
-         font-size: 18px;
-         padding: 10px;
-         transition: background-color 0.3s ease-in-out;
-         border-bottom: 2px solid transparent;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            padding: 10px;
+            transition: background-color 0.3s ease-in-out;
+            border-bottom: 2px solid transparent;
         }
 
         nav a:hover {
-         background-color: rgba(255, 255, 255, 0.1);
-         border-bottom-color: #007bff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-bottom-color: #007bff;
         }
 
         section {
             padding: 60px;
-            display: none;
+            display: none; /* Ocultar todas las secciones al cargar la página */
         }
 
         section.active {
@@ -154,6 +154,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            display: none; /* Ocultar el pie de página al cargar la página */
         }
 
         form {
@@ -251,7 +252,7 @@
         </div>
         <div>
             <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" style="width: 250px;">
-        </div> 
+        </div>
     </header>
 
     <nav id="mainNav">
@@ -362,6 +363,11 @@
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
             document.getElementById('mainNav').style.display = 'block';
+            document.querySelector('header').style.display = 'flex';
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'block';
+            });
+            document.querySelector('footer').style.display = 'block';
         }
 
         function showSection(id) {
@@ -371,18 +377,18 @@
             });
             document.getElementById(id).classList.add('active');
         }
+
         function addReview(event) {
-    event.preventDefault();
-    const reviewerName = document.getElementById('reviewerName').value;
-    const reviewerMessage = document.getElementById('reviewerMessage').value;
+            event.preventDefault();
+            const reviewerName = document.getElementById('reviewerName').value;
+            const reviewerMessage = document.getElementById('reviewerMessage').value;
 
-    const testimonialContainer = document.createElement('div');
-    testimonialContainer.className = 'testimonial';
-    testimonialContainer.innerHTML = `
-        <p>${reviewerMessage}</p>
-        <p>${reviewerName}</p>
-    `;
-
+            const testimonialContainer = document.createElement('div');
+            testimonialContainer.className = 'testimonial';
+            testimonialContainer.innerHTML = `
+                <p>${reviewerMessage}</p>
+                <p>${reviewerName}</p>
+            `;
 
             document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
             document.getElementById('reviewForm').reset();
