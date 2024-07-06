@@ -154,7 +154,6 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            display: none;
         }
 
         form {
@@ -246,7 +245,7 @@
         </div>
     </div>
 
-    <header id="header">
+    <header>
         <div>
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="IMAGOTIPO TT" style="width: 100px; border-radius: 50%;">
         </div>
@@ -267,10 +266,6 @@
     <section id="inicio" class="active">
         <h2>Inicio</h2>
         <p>Bienvenido a nuestro sitio web.</p>
-        <h3>Filosofía</h3>
-        <p>Nuestra filosofía se basa en la innovación y la excelencia.</p>
-        <h3>Visión</h3>
-        <p>Queremos transformar el mundo a través de soluciones arquitectónicas sostenibles.</p>
     </section>
 
     <section id="proyectos">
@@ -359,7 +354,7 @@
         </form>
     </section>
 
-    <footer id="footer">
+    <footer>
         <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
     </footer>
 
@@ -367,11 +362,6 @@
         function hideCarousel() {
             document.getElementById('carouselContainer').style.display = 'none';
             document.getElementById('mainNav').style.display = 'block';
-            document.getElementById('footer').style.display = 'block';
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'block';
-            });
         }
 
         function showSection(id) {
@@ -389,10 +379,10 @@
 
             const testimonialContainer = document.createElement('div');
             testimonialContainer.className = 'testimonial';
-            testimonialContainer.innerHTML = `
+            testimonialContainer.innerHTML = 
                 <p>"${reviewerMessage}"</p>
                 <p>- ${reviewerName}</p>
-            `;
+            ;
 
             document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
             document.getElementById('reviewForm').reset();
