@@ -371,18 +371,18 @@
             });
             document.getElementById(id).classList.add('active');
         }
-
         function addReview(event) {
-            event.preventDefault();
-            const reviewerName = document.getElementById('reviewerName').value;
-            const reviewerMessage = document.getElementById('reviewerMessage').value;
+    event.preventDefault();
+    const reviewerName = document.getElementById('reviewerName').value;
+    const reviewerMessage = document.getElementById('reviewerMessage').value;
 
-            const testimonialContainer = document.createElement('div');
-            testimonialContainer.className = 'testimonial';
-            testimonialContainer.innerHTML = 
-                <p>"${reviewerMessage}"</p>
-                <p>- ${reviewerName}</p>
-            ;
+    const testimonialContainer = document.createElement('div');
+    testimonialContainer.className = 'testimonial';
+    testimonialContainer.innerHTML = `
+        <p>${reviewerMessage}</p>
+        <p>${reviewerName}</p>
+    `;
+
 
             document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
             document.getElementById('reviewForm').reset();
