@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body {
+       body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -25,9 +25,14 @@
             position: relative;
         }
 
+        .carousel-item {
+            height: 100vh;
+        }
+
         .carousel-item img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             cursor: pointer;
         }
 
@@ -201,6 +206,18 @@
         .review-form {
             margin-top: 30px;
         }
+        
+        .apartado {
+            margin-top: 40px;
+        }
+        
+        .apartado h3 {
+            color: #495057;
+        }
+        
+        .apartado p {
+            color: #6c757d;
+        }
     </style>
 </head>
 <body>
@@ -265,8 +282,29 @@
     </nav>
 
     <section id="inicio" class="active">
-        <h2>Inicio</h2>
-        <p>Bienvenido a nuestro sitio web.</p>
+        <h2>¿Qué es Sinttaxis?</h2>
+        <p>Sintaxis espacial, estudia las formas con las que se vinculan y organizan los espacios de un conjunto 
+            arquitectónico.</p>
+        <div class="apartado">
+            <h3> Filosofia</h3>
+            <p>Somos una empresa de arquitectura, ingeniería y la construcción, dedicada al diseño y creación contemporánea 
+                de espacios, urbanos, públicos, y habitables a diferente escala. Nuestro trabajo se realiza mediante un proceso 
+                de investigación arquitectónico constante y trabajo colectivo en equipo, de esta manera se alcanzan las 
+                necesidades del proyecto, incorporando éste responsablemente al contexto, a los cambios sociales urbanos y 
+                ambientales, fortaleciendo el espacio con un proyecto que aporte vida e identidad.</p>
+        </div>
+        <div class="apartado">
+            <h3>Misión</h3>
+            <p>Somos una empresa comprometida con nuestros clientes internos y externos, cumpliendo siempre con nuestros 
+                valores que nos identifican como organización, brindamos el mejor servicio, innovación del diseño y calidad de la 
+                construcción al usuario mediante proyectos comprometidos con su economía y su relación con medio ambiente, 
+                generando espacios integrales y sustentables que superen las expectativas del cliente al contratarnos. 
+                </p>
+        </div>
+        <div class="apartado">
+            <h3>Valores</h3>
+            <p>Información del Apartado 3.</p>
+        </div>
     </section>
 
     <section id="proyectos">
