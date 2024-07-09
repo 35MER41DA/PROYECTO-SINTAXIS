@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-       body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @font-face {
+            font-family: 'ISOCPEUR';
+            src: url('./path-to-your-font/ISOCPEUR.ttf') format('truetype'); /* Asegúrate de que la ruta a la fuente sea correcta */
+        }
+
+        body {
+            font-family: 'ISOCPEUR', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
@@ -52,7 +57,7 @@
         }
 
         .static-caption img {
-            max-width: 250px; 
+            max-width: 250px;
             cursor: pointer;
         }
 
@@ -206,15 +211,15 @@
         .review-form {
             margin-top: 30px;
         }
-        
+
         .apartado {
             margin-top: 40px;
         }
-        
+
         .apartado h3 {
             color: #495057;
         }
-        
+
         .apartado p {
             color: #6c757d;
         }
@@ -262,92 +267,121 @@
             <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="hideCarousel('inicio')">
         </div>
     </div>
+
     <header>
-        <h1>Sinttaxis</h1>
-        <h2>Consultoría</h2>
-        <div class="brand">
-            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO">
+        <div>
+            <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="IMAGOTIPO TT" style="width: 100px; border-radius: 50%;">
+        </div>
+        <div>
+            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" style="width: 250px;">
         </div>
     </header>
+
     <nav>
-        <a href="#" onclick="showSection('inicio')">Inicio</a>
-        <a href="#" onclick="showSection('quienes-somos')">Quiénes Somos</a>
-        <a href="#" onclick="showSection('servicios')">Servicios</a>
-        <a href="#" onclick="showSection('equipo')">Equipo</a>
-        <a href="#" onclick="showSection('testimonios')">Testimonios</a>
-        <a href="#" onclick="showSection('contacto')">Contacto</a>
+        <a href="#inicio" onclick="showSection('inicio')">Inicio</a>
+        <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#equipo" onclick="showSection('equipo')">Equipo</a>
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
-    <section id="inicio">
-        <h2>Bienvenido a Sinttaxis</h2>
-        <p>En Sinttaxis ofrecemos consultoría de alta calidad para ayudarte a alcanzar tus objetivos empresariales.</p>
+
+    <section id="inicio" class="active">
+        <h2>¿Qué es Sinttaxis?</h2>
+        <p>Sintaxis espacial, estudia las formas con las que se vinculan y organizan los espacios de un conjunto 
+            arquitectónico.</p>
         <div class="apartado">
-            <h3>Filosofía</h3>
-            <p>Nuestra filosofía se basa en la integridad, la innovación y la excelencia.</p>
+            <h3> Filosofia</h3>
+            <p>Somos una empresa de arquitectura, ingeniería y la construcción, dedicada al diseño y creación contemporánea 
+                de espacios, urbanos, públicos, y habitables a diferente escala. Nuestro trabajo se realiza mediante un proceso 
+                de investigación arquitectónico constante y trabajo colectivo en equipo, de esta manera se alcanzan las 
+                necesidades del proyecto, incorporando éste responsablemente al contexto, a los cambios sociales urbanos y 
+                ambientales, fortaleciendo el espacio con un proyecto que aporte vida e identidad.</p>
         </div>
         <div class="apartado">
-            <h3>Visión</h3>
-            <p>Ser líderes en el mercado ofreciendo soluciones innovadoras y personalizadas para nuestros clientes.</p>
+            <h3>Misión</h3>
+            <p>Somos una empresa comprometida con nuestros clientes internos y externos, cumpliendo siempre con nuestros 
+                valores que nos identifican como organización, brindamos el mejor servicio, innovación del diseño y calidad de la 
+                construcción al usuario mediante proyectos comprometidos con su economía y su relación con medio ambiente, 
+                generando espacios integrales y sustentables que superen las expectativas del cliente al contratarnos. 
+                </p>
+        </div>
+        <div class="apartado">
+            <h3>Valores</h3>
+            <p>Información del Apartado 3.</p>
         </div>
     </section>
-    <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
-        <p>Somos una empresa de consultoría con años de experiencia en el sector...</p>
-    </section>
+
     <section id="servicios">
         <h2>Servicios</h2>
         <ul class="services-list">
-            <li>Consultoría Empresarial</li>
-            <li>Asesoramiento Financiero</li>
-            <li>Investigación de Mercado</li>
+            <li>Consultoría estratégica</li>
+            <li>Gestión de proyectos</li>
+            <li>Capacitación y desarrollo</li>
         </ul>
     </section>
+
     <section id="equipo">
         <h2>Equipo</h2>
         <div class="team-member">
-            <img src="https://via.placeholder.com/150" alt="Miembro del equipo">
-            <h3>Nombre del Miembro</h3>
-            <p>Puesto del Miembro</p>
+            <img src="./miembro1.jpg" alt="Miembro del equipo">
+            <h3>Nombre Apellido</h3>
+            <p>Descripción del miembro del equipo</p>
+        </div>
+        <div class="team-member">
+            <img src="./miembro2.jpg" alt="Miembro del equipo">
+            <h3>Nombre Apellido</h3>
+            <p>Descripción del miembro del equipo</p>
         </div>
     </section>
-    <section id="testimonios">
-        <h2>Testimonios</h2>
-        <div class="testimonial">
-            <p>"Sinttaxis ha transformado nuestra empresa..." - Cliente Satisfecho</p>
-        </div>
-    </section>
+
     <section id="contacto">
         <h2>Contacto</h2>
         <form>
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
-            <label for="email">Correo Electrónico:</label>
+            <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required>
             <label for="message">Mensaje:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
+
     <footer>
         <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
     </footer>
-    <script>
-        function hideCarousel(sectionId) {
-            document.querySelector('.full-page-carousel').style.display = 'none';
-            document.querySelector('header').style.display = 'flex'; // Mostrar el encabezado
-            document.querySelector('nav').style.display = 'block'; // Mostrar el menú de navegación
-            document.getElementById(sectionId).style.display = 'block'; // Mostrar la sección de inicio
-            document.querySelector('footer').style.display = 'block'; // Mostrar el pie de página
-        }
 
-        function showSection(sectionId) {
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function hideCarousel(sectionId) {
+            document.getElementById('carouselContainer').style.display = 'none';
+            document.querySelector('header').style.display = 'flex';
+            document.querySelector('nav').style.display = 'block';
+            showSection(sectionId);
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+            activeSection.style.display = 'block';
+            var footer = document.querySelector('footer');
+            footer.style.display = 'block'; // Mostrar el pie de página cuando se muestra una sección
+        }
+
+        // Ocultar todas las secciones al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
