@@ -359,7 +359,6 @@
             <h3>Investigación de Mercado</h3>
             <p>Proporcionamos estudios de mercado detallados para identificar oportunidades y desafíos en tu sector.</p>
         </div>
-    
         <section id="equipo">
             <h2>Equipo</h2>
             <p>Conoce a nuestro talentoso equipo.</p>
@@ -414,6 +413,7 @@
             <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
         </footer>
     
+    
         <script>
             function hideCarousel(initialSection) {
                 document.getElementById('carouselContainer').style.display = 'none';
@@ -435,28 +435,24 @@
             }
     
             function addReview(event) {
-                event.preventDefault();
-                const reviewerName = document.getElementById('reviewerName').value;
-                const reviewerMessage = document.getElementById('reviewerMessage').value;
-    
-                const testimonialContainer = document.createElement('div');
-                testimonialContainer.className = 'testimonial';
-                testimonialContainer.innerHTML = `
-                <p>${reviewerMessage}</p>
-                <p>${reviewerName}</p>
-                
-                `;
+            event.preventDefault();
+            const reviewerName = document.getElementById('reviewerName').value;
+            const reviewerMessage = document.getElementById('reviewerMessage').value;
 
-                document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
-                document.getElementById('reviewForm').reset();
-             }
+            const testimonialContainer = document.createElement('div');
+            testimonialContainer.className = 'testimonial';
+            testimonialContainer.innerHTML =
+                (<p>${reviewerMessage}</p>)
+                (<p>${reviewerName}</p>);
 
-        </script>
-    
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+            document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
+            document.getElementById('reviewForm').reset();
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+    
