@@ -462,21 +462,30 @@
             var footer = document.querySelector('footer');
             footer.style.display = 'block'; // Mostrar el pie de página cuando se muestra una sección
         }
+        <script>
         function addReview(event) {
-    event.preventDefault();
-    const reviewerName = document.getElementById('reviewerName').value;
-    const reviewerMessage = document.getElementById('reviewerMessage').value;
+            event.preventDefault(); // Evita el envío del formulario
 
-    const testimonialContainer = document.createElement('div');
-    testimonialContainer.className = 'testimonial';
-    testimonialContainer.innerHTML =` 
-        <p>${reviewerMessage}</p>
-        <p>${reviewerName}</p>`
-    ;
+            // Obtiene los valores del formulario
+            const name = document.getElementById('reviewerName').value;
+            const message = document.getElementById('reviewerMessage').value;
 
-    document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
-    document.getElementById('reviewForm').reset();
-}
+            // Crea un nuevo div para la reseña
+            const newReview = document.createElement('div');
+            newReview.classList.add('testimonial');
+
+            // Agrega el contenido de la reseña al nuevo div
+            newReview.innerHTML = `<p>"${message}"</p><p>- ${name}</p>`;
+
+            // Añade la nueva reseña al contenedor de reseñas
+            const reseñasSection = document.getElementById('reseñas');
+            reseñasSection.insertBefore(newReview, reseñasSection.querySelector('.review-form'));
+
+            // Resetea el formulario
+            document.getElementById('reviewForm').reset();
+
+        
+        }
         // Ocultar todas las secciones al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
             var sections = document.querySelectorAll('section');
