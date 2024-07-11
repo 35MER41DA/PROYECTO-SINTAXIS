@@ -357,6 +357,16 @@
             <p>Proporcionamos estudios de mercado detallados para identificar oportunidades y desafíos en tu sector.</p>
         </div>
 
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <p>Ofrecemos una amplia gama de servicios para satisfacer tus necesidades.</p>
+            <ul class="services-list">
+                <li>Diseño Arquitectónico</li>
+                <li>Construcción</li>
+                <li>Consultoría</li>
+            </ul>
+        </section>
+    
         <section id="equipo">
             <h2>Equipo</h2>
             <p>Conoce a nuestro talentoso equipo.</p>
@@ -411,28 +421,24 @@
             <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
         </footer>
     
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script>
-            function hideCarousel(sectionId) {
+            function hideCarousel(initialSection) {
                 document.getElementById('carouselContainer').style.display = 'none';
+                document.getElementById('mainNav').style.display = 'block';
                 document.querySelector('header').style.display = 'flex';
-                document.querySelector('nav').style.display = 'block';
-                showSection(sectionId);
-            }
-    
-            function showSection(sectionId) {
-                var sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.classList.remove('active');
+                document.querySelectorAll('section').forEach(section => {
                     section.style.display = 'none';
                 });
-                var activeSection = document.getElementById(sectionId);
-                activeSection.classList.add('active');
-                activeSection.style.display = 'block';
-                var footer = document.querySelector('footer');
-                footer.style.display = 'block'; // Mostrar el pie de página cuando se muestra una sección
+                document.getElementById(initialSection).style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+            }
+    
+            function showSection(id) {
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(id).style.display = 'block';
             }
     
             function addReview(event) {
@@ -443,21 +449,21 @@
                 const testimonialContainer = document.createElement('div');
                 testimonialContainer.className = 'testimonial';
                 testimonialContainer.innerHTML = `
-                    <p>${reviewerMessage}</p>
-                    <p>${reviewerName}</p>
+                <p>${reviewerMessage}</p>
+                <p>${reviewerName}</p>
+                
                 `;
-    
+
                 document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
                 document.getElementById('reviewForm').reset();
-            }
-    
-            // Ocultar todas las secciones al cargar la página
-            document.addEventListener('DOMContentLoaded', function() {
-                var sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-            });
+             }
+
         </script>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
 </body>
 </html>
