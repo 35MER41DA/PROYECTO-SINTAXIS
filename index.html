@@ -120,6 +120,7 @@
 
         section p {
             color: #6c757d;
+            text-align: justify;
         }
 
         .carousel-inner img {
@@ -222,6 +223,7 @@
 
         .apartado p {
             color: #6c757d;
+            text-align: justify;
         }
     </style>
 </head>
@@ -412,16 +414,20 @@
     </footer>
 
 
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         function hideCarousel(sectionId) {
-            document.getElementById('carouselContainer').style.display = 'none';
-            document.querySelector('header').style.display = 'flex';
-            document.querySelector('nav').style.display = 'block';
+            var carouselContainer = document.getElementById('carouselContainer');
+            carouselContainer.style.display = 'none';
+
+            var header = document.getElementById('header');
+            header.style.display = 'flex';
+
+            var menu = document.getElementById('menu');
+            menu.style.display = 'block';
+
             showSection(sectionId);
         }
 
@@ -429,38 +435,15 @@
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
                 section.classList.remove('active');
-                section.style.display = 'none';
             });
-            var activeSection = document.getElementById(sectionId);
-            activeSection.classList.add('active');
-            activeSection.style.display = 'block';
-            var footer = document.querySelector('footer');
-            footer.style.display = 'block'; // Mostrar el pie de página cuando se muestra una sección
+
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+
+            var footer = document.getElementById('footer');
+            footer.style.display = 'block';
         }
-        function addReview(event) {
-    event.preventDefault();
-    const reviewerName = document.getElementById('reviewerName').value;
-    const reviewerMessage = document.getElementById('reviewerMessage').value;
-
-    const testimonialContainer = document.createElement('div');
-    testimonialContainer.className = 'testimonial';
-    testimonialContainer.innerHTML = `
-        <p>${reviewerMessage}</p>
-        <p>${reviewerName}</p>
-    `;
-
-    document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
-    document.getElementById('reviewForm').reset();
-}
-
-
-        // Ocultar todas las secciones al cargar la página
-        document.addEventListener('DOMContentLoaded', function() {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
-        });
     </script>
 </body>
 </html>
+
