@@ -165,7 +165,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            display: none; /* Ocultar el pie de página al cargar la página */
+            display: block; /* Ocultar el pie de página al cargar la página */
         }
 
         form {
@@ -444,9 +444,7 @@
 
             const testimonialContainer = document.createElement('div');
             testimonialContainer.className = 'testimonial';
-            testimonialContainer.innerHTML =
-                <p>${reviewerMessage}</p>
-                <p>${reviewerName}</p>;
+            
 
             document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
             document.getElementById('reviewForm').reset();
