@@ -444,10 +444,10 @@
 
     const testimonialContainer = document.createElement('div');
     testimonialContainer.className = 'testimonial';
-    testimonialContainer.innerHTML = 
+    testimonialContainer.innerHTML = `
         <p>${reviewerMessage}</p>
         <p>${reviewerName}</p>
-    ;
+    `;
 
     document.getElementById('reseñas').insertBefore(testimonialContainer, document.querySelector('.review-form'));
     document.getElementById('reviewForm').reset();
