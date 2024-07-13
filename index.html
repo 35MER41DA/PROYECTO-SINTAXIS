@@ -301,8 +301,8 @@
     </div>
 
     <header>
-        <div>
-            <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="IMAGOTIPO TT" style="width: 100px; border-radius: 50%;">
+        <div class="brand">
+            <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="Logo" onclick="toggleMenu()">
         </div>
         <div class="static-caption">
             <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showSection('inicioCarousel')">
@@ -487,24 +487,25 @@
             showSection(sectionId);
         }
     
-            function showSection(sectionId) {
-                var sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.classList.remove('active');
-                    section.style.display = 'none';
-                });
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
     
-                var activeSection = document.getElementById(sectionId);
-                if (activeSection) {
-                    activeSection.classList.add('active');
-                    activeSection.style.display = 'block';
-                }
+            var activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+                activeSection.style.display = 'block';
             }
+        }
     
             function toggleMenu() {
                 var menu = document.getElementById('verticalMenu');
                 menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
             }
+            
     
             function addReview(event) {
                 event.preventDefault(); // Evita el envío del formulario
