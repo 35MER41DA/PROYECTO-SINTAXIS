@@ -305,7 +305,7 @@
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="IMAGOTIPO TT" style="width: 100px; border-radius: 50%;">
         </div>
         <div class="static-caption">
-            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showDivClass('full-page-carousel')">
+            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showSection('inicioCarousel')">
         </div>
     </header>
 
@@ -414,61 +414,60 @@
         </ul>
         </div>
 
-        <section</section>
-       
-        <section id="equipo">
-            <h2>Equipo</h2>
-            <p>Conoce a nuestro talentoso equipo.</p>
-            <div class="team-member">
-                <img src="./team-member1.jpg" alt="Miembro del equipo 1">
-                <h3>Director General.</h3>
-                <p>Arq. Ricardo Daniel Niño Machorro.</p>
-            </div>
-            <div class="team-member">
-                <img src="./team-member2.jpg" alt="Miembro del equipo 2">
-                <h3>María López</h3>
-                <p>Ingeniera Estructural</p>
-            </div>
-        </section>
+   
+    <section id="equipo">
+        <h2>Equipo</h2>
+        <p>Conoce a nuestro talentoso equipo.</p>
+        <div class="team-member">
+            <img src="./team-member1.jpg" alt="Miembro del equipo 1">
+            <h3>Director General.</h3>
+            <p>Arq. Ricardo Daniel Niño Machorro.</p>
+        </div>
+        <div class="team-member">
+            <img src="./team-member2.jpg" alt="Miembro del equipo 2">
+            <h3>María López</h3>
+            <p>Ingeniera Estructural</p>
+        </div>
+    </section>
     
-        <section id="reseñas">
-            <h2>Reseñas</h2>
-            <div class="testimonial">
-                <p>"Excelente servicio y profesionalismo."</p>
-                <p>- Cliente Satisfecho</p>
-            </div>
-            <div class="testimonial">
-                <p>"Resultados excepcionales en cada proyecto."</p>
-                <p>- Otro Cliente Satisfecho</p>
-            </div>
-            <div class="review-form">
-                <h3>Escribe una reseña</h3>
-                <form id="reviewForm" onsubmit="addReview(event)">
-                    <label for="reviewerName">Nombre:</label>
-                    <input type="text" id="reviewerName" name="reviewerName" required>
-                    <label for="reviewerMessage">Reseña:</label>
-                    <textarea id="reviewerMessage" name="reviewerMessage" rows="4" required></textarea>
-                    <button type="submit">Enviar Reseña</button>
-                </form>
-            </div>
-        </section>
-    
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form>
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                <button type="submit">Enviar</button>
+    <section id="reseñas">
+        <h2>Reseñas</h2>
+        <div class="testimonial">
+            <p>"Excelente servicio y profesionalismo."</p>
+            <p>- Cliente Satisfecho</p>
+        </div>
+        <div class="testimonial">
+            <p>"Resultados excepcionales en cada proyecto."</p>
+            <p>- Otro Cliente Satisfecho</p>
+        </div>
+        <div class="review-form">
+            <h3>Escribe una reseña</h3>
+            <form id="reviewForm" onsubmit="addReview(event)">
+                <label for="reviewerName">Nombre:</label>
+                <input type="text" id="reviewerName" name="reviewerName" required>
+                <label for="reviewerMessage">Reseña:</label>
+                <textarea id="reviewerMessage" name="reviewerMessage" rows="4" required></textarea>
+                <button type="submit">Enviar Reseña</button>
             </form>
-        </section>
+        </div>
+    </section>
     
-        <footer>
-            <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
-        </footer>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
+    </footer>
     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
