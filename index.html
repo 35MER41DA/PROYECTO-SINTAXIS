@@ -488,17 +488,10 @@
         nav.style.display = 'block';
         footer.style.display = 'none';
     
-            
-        }
-
-            setTimeout(() => {
-            nav.style.display = 'none';
-            }, 5000);
-
             showSection(sectionId);
-
-
-            
+        }
+        
+    
         function showSection(sectionId) {
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
