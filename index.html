@@ -79,36 +79,65 @@
             text-align: right;
         }
 
-        nav {
+        nav.vertical-menu {
+            display: none;
             background-color: #a73e3e;
             color: #fff;
             padding: 20px;
             text-align: center;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            overflow-y: auto;
             z-index: 1000;
-            display: none; /* Ocultar el menú de navegación al cargar la página */
         }
 
-        nav a {
+        nav.vertical-menu a {
+            display: block;
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 10px 0;
             font-size: 18px;
-            padding: 10px;
             transition: background-color 0.3s ease-in-out;
-            border-bottom: 2px solid transparent;
         }
 
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-bottom-color: #007bff;
+        nav.vertical-menu a:hover {
+            background-color: #007bff;
+        }  nav.vertical-menu {
+            display: none;
+            background-color: #a73e3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            overflow-y: auto;
+            z-index: 1000;
         }
+
+        nav.vertical-menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav.vertical-menu a:hover {
+            background-color: #007bff;
+        }
+        
 
         section {
             padding: 60px;
             display: none; /* Ocultar todas las secciones al cargar la página */
-            text-align: center
+            text-align: center;
         }
 
         section.active {
@@ -121,7 +150,6 @@
 
         section p {
             color: #6c757d;
-            text-align: justify;
             text-justify: inter-word;
         }
 
@@ -225,7 +253,6 @@
 
         .apartado p {
             color: #6c757d;
-            text-align: justify;
             text-justify: inter-word;
         }
     </style>
@@ -282,7 +309,7 @@
         </div>
     </header>
 
-    <nav id="mainNav">
+    <nav id="verticalMenu" class="vertical-menu">
         <a href="#inicio" onclick="showSection('inicio')">Inicio</a> |
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a> |
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a> |
@@ -453,6 +480,11 @@
             document.querySelector('header').style.display = 'flex';
             document.querySelector('nav').style.display = 'block';
             showSection(sectionId);
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById('verticalMenu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
         }
 
         function showSection(sectionId) {
