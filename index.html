@@ -414,134 +414,127 @@
         </ul>
         </div>
        
-    <section id="equipo">
-        <h2>Equipo</h2>
-        <p>Conoce a nuestro talentoso equipo.</p>
-        <div class="team-member">
-            <img src="./team-member1.jpg" alt="Miembro del equipo 1">
-            <h3>Director General.</h3>
-            <p>Arq. Ricardo Daniel Niño Machorro. </p>
-        </div>
-        <div class="team-member">
-            <img src="./team-member2.jpg" alt="Miembro del equipo 2">
-            <h3>María López</h3>
-            <p>Ingeniera Estructural</p>
-        </div>
-    </section>
-
-    <section id="reseñas">
-        <h2>Reseñas</h2>
-        <div class="testimonial">
-            <p>"Excelente servicio y profesionalismo."</p>
-            <p>- Cliente Satisfecho</p>
-        </div>
-        <div class="testimonial">
-            <p>"Resultados excepcionales en cada proyecto."</p>
-            <p>- Otro Cliente Satisfecho</p>
-        </div>
-        <div class="review-form">
-            <h3>Escribe una reseña</h3>
-            <form id="reviewForm" onsubmit="addReview(event)">
-                <label for="reviewerName">Nombre:</label>
-                <input type="text" id="reviewerName" name="reviewerName" required>
-                <label for="reviewerMessage">Reseña:</label>
-                <textarea id="reviewerMessage" name="reviewerMessage" rows="4" required></textarea>
-                <button type="submit">Enviar Reseña</button>
+        <section id="equipo">
+            <h2>Equipo</h2>
+            <p>Conoce a nuestro talentoso equipo.</p>
+            <div class="team-member">
+                <img src="./team-member1.jpg" alt="Miembro del equipo 1">
+                <h3>Director General.</h3>
+                <p>Arq. Ricardo Daniel Niño Machorro.</p>
+            </div>
+            <div class="team-member">
+                <img src="./team-member2.jpg" alt="Miembro del equipo 2">
+                <h3>María López</h3>
+                <p>Ingeniera Estructural</p>
+            </div>
+        </section>
+    
+        <section id="reseñas">
+            <h2>Reseñas</h2>
+            <div class="testimonial">
+                <p>"Excelente servicio y profesionalismo."</p>
+                <p>- Cliente Satisfecho</p>
+            </div>
+            <div class="testimonial">
+                <p>"Resultados excepcionales en cada proyecto."</p>
+                <p>- Otro Cliente Satisfecho</p>
+            </div>
+            <div class="review-form">
+                <h3>Escribe una reseña</h3>
+                <form id="reviewForm" onsubmit="addReview(event)">
+                    <label for="reviewerName">Nombre:</label>
+                    <input type="text" id="reviewerName" name="reviewerName" required>
+                    <label for="reviewerMessage">Reseña:</label>
+                    <textarea id="reviewerMessage" name="reviewerMessage" rows="4" required></textarea>
+                    <button type="submit">Enviar Reseña</button>
+                </form>
+            </div>
+        </section>
+    
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <button type="submit">Enviar</button>
             </form>
-        </div>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
-    </footer>
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        
-        function hideCarousel(sectionId) {
-            var carouselContainer = document.getElementById('carouselContainer');
-            var header = document.querySelector('header');
-            var nav = document.querySelector('nav');
-            var footer = document.querySelector('footer');
-
-            carouselContainer.style.display = 'none';
-            header.style.display = 'flex';
-            nav.style.display = 'block';
-            footer.style.display = 'block';
-
-            showSection(sectionId);
-        }
-
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-                section.style.display = 'none';
-            });
-
-            var activeSection = document.getElementById(sectionId);
-            if (activeSection){ 
-                activeSection.classList.add('active');
-                activeSection.style.display = 'block';
+        </section>
+    
+        <footer>
+            <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
+        </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function hideCarousel(sectionId) {
+                var carouselContainer = document.getElementById('carouselContainer');
+                var header = document.querySelector('header');
+                var nav = document.querySelector('nav');
+                var footer = document.querySelector('footer');
+    
+                carouselContainer.style.display = 'none';
+                header.style.display = 'flex';
+                nav.style.display = 'block';
+                footer.style.display = 'block';
+    
+                showSection(sectionId);
             }
-
-        }
-
-        function toggleMenu() {
-            var menu = document.getElementById('verticalMenu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-        }
-
     
+            function showSection(sectionId) {
+                var sections = document.querySelectorAll('section');
+                sections.forEach(function(section) {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                });
     
-        function addReview(event) {
-            event.preventDefault(); // Evita el envío del formulario
-
-            // Obtiene los valores del formulario
-            const name = document.getElementById('reviewerName').value;
-            const message = document.getElementById('reviewerMessage').value;
-
-            // Crea un nuevo div para la reseña
-            const newReview = document.createElement('div');
-            newReview.classList.add('testimonial');
-
-            // Agrega el contenido de la reseña al nuevo div
-            newReview.innerHTML = `<p>"${message}"</p><p>- ${name}</p>`;
-
-            // Añade la nueva reseña al contenedor de reseñas
-            const reseñasSection = document.getElementById('reseñas');
-            reseñasSection.insertBefore(newReview, reseñasSection.querySelector('.review-form'));
-
-            // Resetea el formulario
-            document.getElementById('reviewForm').reset();
-
-        
-        }
-        // Ocultar todas las secciones al cargar la página
-        document.addEventListener('DOMContentLoaded', function() {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
+                var activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                    activeSection.style.display = 'block';
+                }
+            }
+    
+            function toggleMenu() {
+                var menu = document.getElementById('verticalMenu');
+                menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+            }
+    
+            function addReview(event) {
+                event.preventDefault(); // Evita el envío del formulario
+    
+                // Obtiene los valores del formulario
+                const name = document.getElementById('reviewerName').value;
+                const message = document.getElementById('reviewerMessage').value;
+    
+                // Crea un nuevo div para la reseña
+                const newReview = document.createElement('div');
+                newReview.classList.add('testimonial');
+    
+                // Agrega el contenido de la reseña al nuevo div
+                newReview.innerHTML = `<p>"${message}"</p><p>- ${name}</p>`;
+    
+                // Añade la nueva reseña al contenedor de reseñas
+                const reseñasSection = document.getElementById('reseñas');
+                reseñasSection.insertBefore(newReview, reseñasSection.querySelector('.review-form'));
+    
+                // Resetea el formulario
+                document.getElementById('reviewForm').reset();
+            }
+    
+            // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
+            document.addEventListener('DOMContentLoaded', function() {
+                var sections = document.querySelectorAll('section');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+    
             });
-        });
     </script>
 </body>
 </html>
