@@ -527,7 +527,14 @@
                 document.getElementById('reviewForm').reset();
             }
     
-           
+            // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
+            document.addEventListener('DOMContentLoaded', function() {
+                var sections = document.querySelectorAll('section');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+    
+            });
     </script>
 </body>
 </html>
