@@ -79,8 +79,8 @@
             text-align: right;
         }
         .brand img{
-            width: 100%;
-            height: 100%;
+            width: 30%;
+            height: 30%;
         }
 
         nav.vertical-menu {
@@ -309,7 +309,7 @@
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="Logo" onclick="toggleMenu()">
         </div>
         <div class="static-caption">
-            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showSection('inicioCarousel')">
+            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showCarousel()">
         </div>
     </header>
 
@@ -505,43 +505,54 @@
                 activeSection.style.display = 'block';
             }
         }
-    
-            function toggleMenu() {
-                var menu = document.getElementById('verticalMenu');
-                menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-            }
+
+   
+
+        function toggleMenu() {
+            var menu = document.getElementById('verticalMenu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+        }
             
     
-            function addReview(event) {
-                event.preventDefault(); // Evita el envío del formulario
+        function addReview(event) {
+            event.preventDefault(); // Evita el envío del formulario
     
                 // Obtiene los valores del formulario
-                const name = document.getElementById('reviewerName').value;
-                const message = document.getElementById('reviewerMessage').value;
+            const name = document.getElementById('reviewerName').value;
+            const message = document.getElementById('reviewerMessage').value;
     
                 // Crea un nuevo div para la reseña
-                const newReview = document.createElement('div');
-                newReview.classList.add('testimonial');
+            const newReview = document.createElement('div');
+            newReview.classList.add('testimonial');
     
                 // Agrega el contenido de la reseña al nuevo div
-                newReview.innerHTML = `<p>"${message}"</p><p>- ${name}</p>`;
+            newReview.innerHTML = `<p>"${message}"</p><p>- ${name}</p>`;
     
                 // Añade la nueva reseña al contenedor de reseñas
-                const reseñasSection = document.getElementById('reseñas');
-                reseñasSection.insertBefore(newReview, reseñasSection.querySelector('.review-form'));
+            const reseñasSection = document.getElementById('reseñas');
+            reseñasSection.insertBefore(newReview, reseñasSection.querySelector('.review-form'));
     
                 // Resetea el formulario
-                document.getElementById('reviewForm').reset();
-            }
+            document.getElementById('reviewForm').reset();
+        }
     
-            // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
-            document.addEventListener('DOMContentLoaded', function() {
-                var sections = document.querySelectorAll('section');
-                sections.forEach(function(section) {
-                    section.style.display = 'none';
-                });
-    
+            
+               
+        var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
             });
+    
+
+        // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
+        document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+    
+       });
     </script>
 </body>
 </html>
