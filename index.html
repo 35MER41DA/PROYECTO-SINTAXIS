@@ -515,33 +515,12 @@
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
                 section.style.display = 'none';
-        });
 
-        document.querySelector('header .brand img').addEventListener('click', function() {
-            var nav = document.getElementById('nav');
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'block';
-            }
-        });
-
-        // Alternar visibilidad de las secciones al hacer clic en los enlaces del menú
-            document.querySelectorAll('nav.vertical-menu a').forEach(function(menuLink) {
-            menuLink.addEventListener('click', function(event) {
-                event.preventDefault();
-                var targetId = this.getAttribute('href').substring(1);
-                document.querySelectorAll('section').forEach(function(section) {
-                    section.style.display = 'none';
-                    section.classList.remove('active');
-                });
-                var targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                    targetSection.classList.add('active');
-                }
+        
             });
-        });
+
+    
+       });
     </script>
 </body>
 </html>
