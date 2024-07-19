@@ -482,29 +482,11 @@
 
    
 
-        function hideCarousel(elementToShow) {
-            document.getElementById('carouselContainer').style.display = 'none';
-            document.querySelector('header').style.display = 'flex';
-            document.querySelector('footer').style.display = 'block';
-            document.querySelector('#inicio').style.display = 'block';
-            document.querySelector('#proyectos').style.display = 'block';
-            document.querySelector('#servicios').style.display = 'block';
-            document.querySelector('#equipo').style.display = 'block';
-            document.querySelector('#reseñas').style.display = 'block';
-            document.querySelector('#contacto').style.display = 'block';
-            if (elementToShow === 'nav') {
-                document.querySelector('nav.vertical-menu').style.display = 'block';
-            }
-        }
-
         function toggleMenu() {
-            var menu = document.querySelector('nav.vertical-menu');
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
-            }
+            var menu = document.getElementById('verticalMenu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
         }
+            
     
         function addReview(event) {
             event.preventDefault(); // Evita el envío del formulario
