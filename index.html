@@ -321,29 +321,29 @@
             <p>Información del Apartado 3.</p>
         </div>
     </section>
+
+    
     <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Algunos de nuestros proyectos destacados.</p>
-        <div id="carouselProyectos" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./proyecto LEVR A.jpg" class="d-block w-100" alt="Proyecto 1">
+      <div class="container">
+            <h2>Proyectos</h2>
+            <p>Algunos de nuestros proyectos destacados.</p>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Apartado 1</h3>
+                    <p>Descripción del Apartado 1.</p>
+                    <img src="ruta-de-tu-imagen1.jpg" alt="Imagen 1 del Apartado 1">
                 </div>
-                <div class="carousel-item">
-                    <img src="./Proyecto LEVR B.jpg" class="d-block w-100" alt="Proyecto 2">
+                <div class="grid-item">
+                    <h3>Apartado 2</h3>
+                    <p>Descripción del Apartado 2.</p>
+                    <img src="ruta-de-tu-imagen2.jpg" alt="Imagen 2 del Apartado 2">
                 </div>
-                <div class="carousel-item">
-                    <img src="./Proyecto LEVR c.jpg" class="d-block w-100" alt="Proyecto 3">
+                <div class="grid-item">
+                    <h3>Apartado 3</h3>
+                    <p>Descripción del Apartado 3.</p>
+                    <img src="ruta-de-tu-imagen3.jpg" alt="Imagen 3 del Apartado 3">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselProyectos" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselProyectos" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
         </div>
     </section>
 
@@ -507,8 +507,6 @@
                 // Resetea el formulario
             document.getElementById('reviewForm').reset();
         }
-    
-        
 
         // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
         document.addEventListener('DOMContentLoaded', function() {
