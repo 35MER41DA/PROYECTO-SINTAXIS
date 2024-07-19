@@ -480,21 +480,13 @@
             }
         }
 
-            if (elementToShow === 'nav') {
-                document.querySelector('nav.vertical-menu').style.display = 'block';
-        }
-        
+   
 
         function toggleMenu() {
-            var menu = document.querySelector('nav.vertical-menu');
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
-            }
-
+            var menu = document.getElementById('verticalMenu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
         }
- 
+            
     
         function addReview(event) {
             event.preventDefault(); // Evita el envío del formulario
