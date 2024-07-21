@@ -83,19 +83,26 @@
             height: 7%;
         }
 
+        
         nav.vertical-menu {
             display: none;
-            background-color: rgb(128, 0, 0);
+            background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             padding: 20px;
-            text-align: center;
+            text-align: left;
             position: fixed;
             top: 0;
             left: 0;
             bottom: 0;
-            width: 200px;
+            width: 250px;
             overflow-y: auto;
             z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+
+        nav.vertical-menu.show {
+            transform: translateX(0);
         }
 
         nav.vertical-menu a {
@@ -504,8 +511,20 @@
         }
 
         function toggleMenu() {
-            var menu = document.getElementById('verticalMenu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+            const menu = document.getElementById('verticalMenu');
+            menu.classList.toggle('show');
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            const section = document.getElementById(sectionId);
+            section.classList.add('active');
+            section.style.display = 'block';
+            toggleMenu(); // Ocultar el menú después de hacer clic en un enlace
         }
             
     
