@@ -271,7 +271,7 @@
         .project-description {
             margin-top: 10px;
             color: #6c757d;
-            text-align: left;
+            text-align: center;
         }
 
         .grid-container {
@@ -330,7 +330,7 @@
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="Logo" onclick="toggleMenu()">
         </div>
         <div class="static-caption">
-            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="inicioCarousel()">
+            <img src="./SINTTAXIS IMAGOTIPO.jpg" alt="IMAGOTIPO" onclick="showCarousel()" style="cursor: pointer;">>
         </div>
     </header>
 
@@ -517,7 +517,7 @@
         carouselContainer.style.display = 'none';
         header.style.display = 'flex';
         nav.style.display = 'block';
-        footer.style.display = 'none';
+        footer.style.display = 'block';
     
             showSection(sectionId);
         }
