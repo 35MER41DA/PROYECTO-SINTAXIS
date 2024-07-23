@@ -242,14 +242,7 @@
         }
 
         
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        
-        .grid-item {
+        .project-container {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -257,16 +250,36 @@
             text-align: center;
             transition: transform 0.3s ease-in-out;
         }
-        .grid-item img {
-            width: min-content;
-           height: min-content;
-        
-        }
 
-        .grid-item:hover {
+        .project-container:hover {
             transform: translateY(-10px);
         }
 
+        .project-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-images img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .project-description {
+            margin-top: 10px;
+            color: #6c757d;
+            text-align: left;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -362,26 +375,31 @@
             <h2>Proyectos</h2>
             <p>Algunos de nuestros proyectos destacados.</p>
             <div class="grid-container">
-                <div class="grid-item">
-                    <h3>PROYECTO LEVR</h3>
-                    <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
-                    <img src="./proyecto LEVR A.jpg" alt="LEVR A">
+                <!-- Repeat the following project-container 15 times -->
+                <div class="project-container">
+                    <h3>Proyecto 1</h3>
+                    <div class="project-images">
+                        <img src="./proyecto1-img1.jpg" alt="Imagen 1">
+                        <img src="./proyecto1-img2.jpg" alt="Imagen 2">
+                        <img src="./proyecto1-img3.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="project-description">
+                        <p>Descripción del proyecto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <h3>Apartado 2</h3>
-                    <p>Descripción del Apartado 2.</p>
-                    <img src="./Proyecto LEVR B.jpg" alt="LEVR B">
+                <!-- Add 14 more project containers as needed -->
+                <!-- Example of another project container -->
+                <div class="project-container">
+                    <h3>Proyecto 2</h3>
+                    <div class="project-images">
+                        <img src="./proyecto2-img1.jpg" alt="Imagen 1">
+                        <img src="./proyecto2-img2.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="project-description">
+                        <p>Descripción del proyecto 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <h3>Apartado 3</h3>
-                    <p>Descripción del Apartado 3.</p>
-                    <img src="./Proyecto LEVR c.jpg" alt="LEVR C">
-                </div>
-                <div class="grid-item">
-                    <h3>Apartado 3</h3>
-                    <p>Descripción del Apartado 3.</p>
-                    <img src="./Proyecto LEVR D.jpg" alt="LEVR D">
-                </div>
+                <!-- Repeat for remaining 13 projects -->
             </div>
         </div>
     </section>
