@@ -246,45 +246,59 @@
             text-justify: inter-word;
         }
 
-        
-        .project-container {
-            background-color: black;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .project-container:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-images {
+        .gallery-section {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .project-images img {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
-        }
-
-        .project-description {
-            margin-top: 10px;
-            color: #6c757d;
-            text-align: center;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            justify-content: center;
             padding: 20px;
         }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        } 
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .gallery img {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .info-section {
+            margin-top: 10px;
+        }
+
+
         
     </style>
 </head>
@@ -377,47 +391,57 @@
 
 
     <section id="proyectos">
-      <div class="container">
-            <h2>Proyectos</h2>
-            <p>Algunos de nuestros proyectos destacados.</p>
-            <div class="grid-container">
-                <!-- Repeat the following project-container 15 times -->
-                <div class="project-container">
-                    <h3>Proyecto LEVR</h3>
-                    <div class="project-images">
-                        <img src="./proyecto LEVR A.jpg" alt="Imagen a">
-                        <img src="./Proyecto LEVR B.jpg" alt="Imagen b">
-                        <img src="./Proyecto LEVR c.jpg" alt="Imagen c">
-                    </div>
-                    <div class="project-description">
-                        <p>CASA HABITACIÓN RESIDENCIAL LEVR.</p>
-                    </div>
-                    <div class="project-container">
-                        <h3>Proyecto LEVR</h3>
-                        <div class="project-images">
-                            <img src="./proyecto LEVR A.jpg" alt="Imagen a">
-                            <img src="./Proyecto LEVR B.jpg" alt="Imagen b">
-                            <img src="./Proyecto LEVR c.jpg" alt="Imagen c">
+        <section class="gallery-section">
+            <div class="container" id="container-1">
+            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
+                <div class="overlay" id="overlay-1">
+                    <div class="overlay-content">
+                        <div class="gallery">
+                            <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
+                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
+                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
                         </div>
-                        <div class="project-description">
-                            <p>PROYECTO LOCALES COMERCIALES Y DEPARTAMENTOS MVB</p>
+                        <div class="info-section">
+                            <h3>LEVR</h3>
+                            <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
                         </div>
-                </div>
-                <!-- Add 14 more project containers as needed -->
-                <!-- Example of another project container -->
-                <div class="project-container">
-                    <h3>Proyecto 2</h3>
-                    <div class="project-images">
-                        <img src="./Proyecto LEVR D.jpg" alt="Imagen d">
-                        <img src="./proyecto LEVR fachada.jpg" alt="Imagen fachada">
-                    </div>
-                    <div class="project-description">
-                        <p>Descripción del proyecto 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
-                <!-- Repeat for remaining 13 projects -->
             </div>
-        </div>
+
+            <div class="container" id="container-1">
+            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
+                <div class="overlay" id="overlay-1">
+                    <div class="overlay-content">
+                        <div class="gallery">
+                            <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
+                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
+                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
+                        </div>
+                        <div class="info-section">
+                            <h3>LEVR</h3>
+                            <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="container" id="container-1">
+            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
+                <div class="overlay" id="overlay-1">
+                    <div class="overlay-content">
+                        <div class="gallery">
+                            <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
+                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
+                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
+                        </div>
+                        <div class="info-section">
+                            <h3>LEVR</h3>
+                            <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <section id="servicios">
@@ -443,25 +467,12 @@
 
         <div class="services-list">
             <h2>Servcios de la Construcción</h2>
-            <h3>2.1. Construcción general.</h3>
         <ul class="services-list">
-            <li>2.1.1. Presupuestos. </li>
-            <li>2.1.2. Ejecución de obra.  </li>
-            <li>2.1.3. Mantenimiento (industrial, habitacional).</li>
-            <li>2.1.4. Remodelación. </li>
-            <li>2.1.5. Ampliación.  </li>
-            <li>2.1.6. Supervisión de obra. </li>
-        </ul>
-        <h3>2.2. Servicios particulares. </h3>
-        <ul class="services-list">
-            <li>2.2.1. Albañilería.  </li>
-            <li>2.2.2. Carpintería. </li>
-            <li>2.2.3. Plomería. </li>
-            <li>2.2.4. Electricista.  </li>
-            <li>2.2.5. Herrería.  </li>
-            <li>2.2.6. Aluminio y vidrio.  </li>
-            <li>2.2.7. Ebanista (carpintería, muebles y terminados).</li>
-            <li>2.2.8. Acabados en General (colocación, tabla roca, pastas, pinturas).</li>
+            <li>2.1 Ejecución de obra.  </li>
+            <li>2.2 Mantenimiento (industrial, habitacional).</li>
+            <li>2.3 Remodelación. </li>
+            <li>2.4 Ampliación.  </li>
+            <li>2.5 Supervisión de obra. </li>
         </ul>
         </div>
     </section>
@@ -520,6 +531,7 @@
         <p>&copy; 2023 Sinttaxis. Todos los derechos reservados.</p>
     </footer>
     
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -619,9 +631,22 @@
 
         
             });
+        document.addEventListener('DOMContentLoaded', function() {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach((container, index) => {
+              const mainImage = container.querySelector('.main-image');
+              const overlay = container.querySelector('.overlay');
 
-    
+              mainImage.addEventListener('click', function() {
+              overlay.style.display = 'block';
+              });
+
+              overlay.addEventListener('click', function() {
+              overlay.style.display = 'none';
+              });
+            });
        });
+    });
     </script>
 </body>
 </html>
