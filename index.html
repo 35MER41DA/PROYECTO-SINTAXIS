@@ -627,6 +627,13 @@
 
         
             });
+        function showOverlay(projectId) {
+            var overlay = document.getElementById(projectId);
+            overlay.style.display = 'block';
+            overlay.onclick = function() {
+                overlay.style.display = 'none';
+            };
+        }
         document.addEventListener('DOMContentLoaded', function() {
             const galleryItems = document.querySelectorAll('.gallery-item');
 
