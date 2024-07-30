@@ -246,24 +246,22 @@
             text-justify: inter-word;
         }
 
-        .gallery-section {
+        .gallery-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
             padding: 20px;
         }
 
-        .container {
+        .gallery-item {
+            margin: 10px;
             position: relative;
             width: 200px;
-            height: 200px;
-        } 
+        }
 
         .main-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             cursor: pointer;
         }
 
@@ -278,6 +276,8 @@
             color: white;
             text-align: center;
             padding: 10px;
+            overflow-y: scroll;
+            z-index: 1000;
         }
 
         .overlay-content {
@@ -296,6 +296,16 @@
 
         .info-section {
             margin-top: 10px;
+            text-align: left;
+        }
+
+        .info-section h3 {
+            color: rgba(128, 0, 0);
+        }
+
+        .info-section p {
+            color: white;
+            text-justify: inter-word;
         }
 
 
@@ -391,57 +401,44 @@
 
 
     <section id="proyectos" class="gallery-section">
-        <div class="container">
-            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
-            <div class="overlay">
-                <div class="overlay-content">
-                    <div class="gallery">
-                        <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
-                        <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
-                        <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
-                    </div>
-                    <div class="info-section">
-                        <h3>LEVR</h3>
-                        <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
-            <div class="overlay">
-                <div class="overlay-content">
-                    <div class="gallery">
-                        <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
-                        <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
-                        <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
-                    </div>
-                    <div class="info-section">
-                        <h3>LEVR</h3>
-                        <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <div class="gallery">
+                            <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
+                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
+                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
+                        </div>
+                        <div class="info-section">
+                            <h3>LEVR</h3>
+                            <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="container">
-            <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
-            <div class="overlay">
-                <div class="overlay-content">
-                    <div class="gallery">
-                        <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
-                        <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
-                        <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
-                    </div>
-                    <div class="info-section">
-                        <h3>LEVR</h3>
-                        <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
+
+            <div class="gallery-item">
+                <img src="./proyecto LEVR Jardin.jpg" alt="fachada" class="main-image">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <div class="gallery">
+                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 2-1">
+                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 2-2">
+                            <img src="./Proyecto LEVR D.jpg" alt="Imagen 2-3">
+                        </div>
+                        <div class="info-section">
+                            <h3>XYZ</h3>
+                            <p>CASA HABITACIÓN RESIDENCIAL XYZ</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Agrega más galerías según sea necesario -->
         </div>
     </section>
+
     
     <section id="servicios">
         <h1>Servicios</h1>
@@ -631,38 +628,27 @@
         
             });
         document.addEventListener('DOMContentLoaded', function() {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-            section.style.display = 'none';
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach((item) => {
+                const mainImage = item.querySelector('.main-image');
+                const overlay = item.querySelector('.overlay');
+
+                mainImage.addEventListener('click', function() {
+                    overlay.style.display = 'block';
+                });
+
+                overlay.addEventListener('click', function() {
+                    overlay.style.display = 'none';
+                });
+
+                overlay.addEventListener('scroll', function() {
+                    if (overlay.scrollTop === 0) {
+                        overlay.style.display = 'none';
+                    }
+                });
             });
-            showSection('inicio');
-
-        const containers = document.querySelectorAll('.container');
-           containers.forEach((container, index) => {
-           const mainImage = container.querySelector('.main-image');
-           const overlay = container.querySelector('.overlay');
-
-           mainImage.addEventListener('click', function() {
-            overlay.style.display = 'block';
         });
-
-        overlay.addEventListener('click', function() {
-            overlay.style.display = 'none';
-        });
-        });
-        });
-
-        function showSection(sectionId) {
-        var sections = document.querySelectorAll('section');
-         sections.forEach(function(section) {
-        section.style.display = 'none';
-        });
-
-        var activeSection = document.getElementById(sectionId);
-         if (activeSection) {
-        activeSection.style.display = 'block';
-         }
-        }
     });
     </script>
 </body>
