@@ -630,21 +630,39 @@
 
         
             });
-        document.addEventListener('DOMContentLoaded', function() {
-            const containers = document.querySelectorAll('.container');
-            containers.forEach((container, index) => {
-              const mainImage = container.querySelector('.main-image');
-              const overlay = container.querySelector('.overlay');
-
-              mainImage.addEventListener('click', function() {
-              overlay.style.display = 'block';
-              });
-
-              overlay.addEventListener('click', function() {
-              overlay.style.display = 'none';
-              });
+            document.addEventListener('DOMContentLoaded', function() {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+            section.style.display = 'none';
             });
-       });
+            showSection('inicio');
+
+            const containers = document.querySelectorAll('.container');
+           containers.forEach((container, index) => {
+           const mainImage = container.querySelector('.main-image');
+           const overlay = container.querySelector('.overlay');
+
+           mainImage.addEventListener('click', function() {
+            overlay.style.display = 'block';
+        });
+
+        overlay.addEventListener('click', function() {
+            overlay.style.display = 'none';
+        });
+        });
+        });
+
+        function showSection(sectionId) {
+        var sections = document.querySelectorAll('section');
+         sections.forEach(function(section) {
+        section.style.display = 'none';
+        });
+
+        var activeSection = document.getElementById(sectionId);
+         if (activeSection) {
+        activeSection.style.display = 'block';
+         }
+        }
     });
     </script>
 </body>
