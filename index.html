@@ -21,6 +21,7 @@
             padding: 0;
             background-color: black;
             color: white; 
+            overflow-x: hidden;
         }
 
         .full-page-carousel {
@@ -245,70 +246,46 @@
             text-justify: inter-word;
         }
 
-        .gallery-container {
+        .projects-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            gap: 50px;
         }
-
-        .gallery-item {
-            margin: 10px;
+        .project {
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
             position: relative;
-            width: 200px;
         }
-
-        .main-image {
+        .project img {
             width: 100%;
             height: auto;
-            cursor: pointer;
+            transition: transform 0.5s ease;
+            will-change: transform;
         }
-
-        .overlay {
-            display: none;
+        .project h3 {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            overflow-y: scroll;
-            z-index: 1000;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            font-size: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
         }
-
-        .overlay-content {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
+        /* Efecto de acercamiento y alejamiento */
+        .project.in-view img {
+            transform: scale(1.2);
         }
-
-        .gallery img {
-            width: 60px;
-            height: 60px;
-            margin: 5px;
-            object-fit: cover;
-            cursor: pointer;
-        }
-
-        .info-section {
-            margin-top: 10px;
-            text-align: left;
-        }
-
-        .info-section h3 {
-            color: rgba(128, 0, 0);
-        }
-
-        .info-section p {
-            color: white;
-            text-justify: inter-word;
+        .project:not(.in-view) img {
+            transform: scale(1);
         }
 
 
-        
     </style>
 </head>
 <body>
@@ -399,42 +376,28 @@
     </section>
 
 
-    <section id="proyectos" class="gallery-section">
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="./proyecto LEVR fachada.jpg" alt="fachada" class="main-image">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <div class="gallery">
-                            <img src="./proyecto LEVR A.jpg" alt="Imagen 1-1">
-                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1-2">
-                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 1-3">
-                        </div>
-                        <div class="info-section">
-                            <h3>LEVR</h3>
-                            <p>CASA HABITACIÓN RESIDENCIAL LEVR</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="proyectos">
+        <div class="projects-container">
+            <div class="project">
+                <img src="./proyecto LEVR A.jpg" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
             </div>
-
-            <div class="gallery-item">
-                <img src="./proyecto LEVR Jardin.jpg" alt="Jardin" class="main-image">
-                <div class="overlay">
-                    <div class="overlay-content">
-                        <div class="gallery">
-                            <img src="./Proyecto LEVR B.jpg" alt="Imagen 2-1">
-                            <img src="./Proyecto LEVR c.jpg" alt="Imagen 2-2">
-                            <img src="./Proyecto LEVR D.jpg" alt="Imagen 2-3">
-                        </div>
-                        <div class="info-section">
-                            <h3>XYZ</h3>
-                            <p>CASA HABITACIÓN RESIDENCIAL XYZ</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="project">
+                <img src="./Proyecto LEVR B.jpg" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
             </div>
-            <!-- Agrega más galerías según sea necesario -->
+            <div class="project">
+                <img src="./Proyecto LEVR c.jpg" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+            </div>
+            <div class="project">
+                <img src="./Proyecto LEVR D.jpg" alt="Proyecto 4">
+                <h3>Proyecto 4</h3>
+            </div>
+            <div class="project">
+                <img src="./proyecto LEVR Jardin.jpg" alt="Proyecto 5">
+                <h3>Proyecto 5</h3>
+            </div>
         </div>
     </section>
 
@@ -626,36 +589,31 @@
 
         
             });
-        function showOverlay(projectId) {
-            var overlay = document.getElementById(projectId);
-            overlay.style.display = 'block';
-            overlay.onclick = function() {
-                overlay.style.display = 'none';
-            };
+            function isElementInView(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
         }
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryItems = document.querySelectorAll('.gallery-item');
 
-            galleryItems.forEach((item) => {
-                const mainImage = item.querySelector('.main-image');
-                const overlay = item.querySelector('.overlay');
-
-                mainImage.addEventListener('click', function() {
-                    overlay.style.display = 'block';
-                });
-
-                overlay.addEventListener('click', function() {
-                    overlay.style.display = 'none';
-                });
-
-                overlay.addEventListener('scroll', function() {
-                    if (overlay.scrollTop === 0) {
-                        overlay.style.display = 'none';
-                    }
-                });
+        // Agregar o quitar la clase in-view según la posición de desplazamiento
+        function checkProjectsInView() {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                if (isElementInView(project)) {
+                    project.classList.add('in-view');
+                } else {
+                    project.classList.remove('in-view');
+                }
             });
+        }
+
+        // Verificar la vista al cargar la página y al hacer scroll
+        window.addEventListener('scroll', checkProjectsInView);
+        window.addEventListener('load', checkProjectsInView);
         });
-    });
+
     </script>
 </body>
 </html>
