@@ -268,7 +268,7 @@
         }
 
         .gallery {
-            display: none;
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
@@ -580,13 +580,15 @@
         }
 
         // Ocultar todas las secciones al cargar la página y mostrar la sección de inicio
-        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function() {
             var sections = document.querySelectorAll('section');
             sections.forEach(function(section) {
                 section.style.display = 'none';
 
         
             });
+        });
+
         function showGallery() {
             console.log('Galería mostrada');
              const gallery = document.getElementById('gallery');
@@ -596,8 +598,6 @@
              gallery.style.display = "none";
         }
         }
-
-     });
 
     </script>
 </body>
