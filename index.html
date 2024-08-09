@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         @font-face {
             font-family: 'ISOCPEUR';
@@ -255,45 +256,35 @@
             text-justify: inter-word;
         }
 
-        .projects-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 0;
-            gap: 50px;
-        }
-        .project {
-            width: 80%;
-            max-width: 800px;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
-            position: relative;
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease;
-            will-change: transform;
-        }
-        .project h3 {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: #fff;
-            font-size: 2rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0;
-        }
-        /* Efecto de acercamiento y alejamiento */
-        .project.in-view img {
-            transform: scale(15);
-        }
-        .project:not(.in-view) img {
-            transform: scale(3);
+        .main-image img {
+            width: 300px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.2s ease;
         }
 
+        .main-image img:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        
 
     </style>
 </head>
@@ -393,28 +384,17 @@
 
 
     <section id="proyectos">
-        <div class="projects-container">
-            <div class="project">
-                <img src="./proyecto LEVR A.jpg" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-            </div>
-            <div class="project">
-                <img src="./Proyecto LEVR B.jpg" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-            </div>
-            <div class="project">
-                <img src="./Proyecto LEVR c.jpg" alt="Proyecto 3">
-                <h3>Proyecto 3</h3>
-            </div>
-            <div class="project">
-                <img src="./Proyecto LEVR D.jpg" alt="Proyecto 4">
-                <h3>Proyecto 4</h3>
-            </div>
-            <div class="project">
-                <img src="./proyecto LEVR Jardin.jpg" alt="Proyecto 5">
-                <h3>Proyecto 5</h3>
-            </div>
+        <div class="main-image">
+            <img src="./Proyecto LEVR 2.jpg" alt="Imagen Principal" id="mainImage" onclick="showGallery()">
         </div>
+        <div class="gallery" id="gallery" style="display: none;">
+            <img src="./Proyecto LEVR B.jpg" alt="Imagen 1">
+            <img src="./Proyecto LEVR c.jpg" alt="Imagen 2">
+            <img src="./Proyecto LEVR c.jpg" alt="Imagen 3">
+            <img src="./proyecto LEVR Jardin.jpg" alt="Imagen 4">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <script src="script.js"></script>
     </section>
 
     
@@ -509,6 +489,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
     <script>
         function hideCarousel(sectionId) {
         var carouselContainer = document.getElementById('carouselContainer');
@@ -605,30 +586,16 @@
 
         
             });
-            function isElementInView(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-            );
+        function showGallery() {
+             const gallery = document.getElementById('gallery');
+             if (gallery.style.display === "none") {
+             gallery.style.display = "flex";
+             } else {
+             gallery.style.display = "none";
+        }
         }
 
-        // Agregar o quitar la clase in-view según la posición de desplazamiento
-        function checkProjectsInView() {
-            const projects = document.querySelectorAll('.project');
-            projects.forEach(project => {
-                if (isElementInView(project)) {
-                    project.classList.add('in-view');
-                } else {
-                    project.classList.remove('in-view');
-                }
-            });
-        }
-
-        // Verificar la vista al cargar la página y al hacer scroll
-        window.addEventListener('scroll', checkProjectsInView);
-        window.addEventListener('load', checkProjectsInView);
-        });
+     });
 
     </script>
 </body>
