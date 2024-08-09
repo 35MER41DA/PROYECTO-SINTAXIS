@@ -264,7 +264,7 @@
         }
 
         .main-image img:hover {
-            transform: scale(1.1);
+            transform: scale(5.5);
         }
 
         .gallery {
@@ -272,6 +272,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            
         }
 
         .gallery img {
@@ -587,6 +588,7 @@
         
             });
         function showGallery() {
+            console.log('Galería mostrada');
              const gallery = document.getElementById('gallery');
              if (gallery.style.display === "none") {
              gallery.style.display = "flex";
