@@ -268,7 +268,7 @@
         }
 
         .main-image img:hover {
-            transform: scale(2);
+            transform: scale(1,8);
         }
 
         .gallery {
@@ -654,38 +654,37 @@
         }
 
         function toggleMenu() {
-            const menu = document.getElementById('verticalMenu');
-            menu.classList.toggle('show');
+             const menu = document.getElementById('verticalMenu');
+             menu.classList.toggle('show');
         }
 
         function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-                section.style.display = 'none';
+             const sections = document.querySelectorAll('section');
+             sections.forEach(section => {
+                 section.classList.remove('active');
+                 section.style.display = 'none';
             });
 
-        const section = document.getElementById(sectionId);
-        if (section) {
+       const section = document.getElementById(sectionId);
+       if (section) {
              section.classList.add('active');
              section.style.display = 'block';
-            }
+        }
 
         // Ocultar el menú después de hacer clic en un enlace
-         menu.style.display = 'none';
+        toggleMenu(); // Llama a toggleMenu para ocultar el menú
         }
 
-        function showHeaderImage() {
-           const headerImage = document.getElementById('headerImage');
-           const menu = document.getElementById('verticalMenu');
-    
-        headerImage.addEventListener('click', function() {
-              menu.style.display = 'block';
+       // Agregar evento de clic a los enlaces del menú
+        document.addEventListener('DOMContentLoaded', function() {
+             const menuLinks = document.querySelectorAll('#verticalMenu a');
+             menuLinks.forEach(link => {
+                  link.addEventListener('click', function() {
+                  toggleMenu(); // Oculta el menú al hacer clic en un enlace
+                   });
+               });
         });
-        }
 
-         // Llamar a la función para activar el clic en la imagen del encabezado
-        document.addEventListener('DOMContentLoaded', showHeaderImage);
 
     
         function addReview(event) {
