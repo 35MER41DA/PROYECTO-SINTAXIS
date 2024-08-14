@@ -343,7 +343,7 @@
     </div>
 
     <header>
-        <div class= "brand">
+        <div id="headerImage" class= "brand">
             <img src="./SINTTAXIS IMAGOTIPO TT.jpg" alt="Logo" onclick="toggleMenu()">
         </div>
         <div class="static-caption">
@@ -545,25 +545,37 @@
 
         function toggleMenu() {
             const menu = document.getElementById('verticalMenu');
-             menu.classList.toggle('show');
+            menu.classList.toggle('show');
         }
 
         function showSection(sectionId) {
-             const sections = document.querySelectorAll('section');
-             sections.forEach(section => {
-             section.classList.remove('active');
-             section.style.display = 'none';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
             });
 
-       const section = document.getElementById(sectionId);
-       if (section) {
-              section.classList.add('active');
-              section.style.display = 'block';
+        const section = document.getElementById(sectionId);
+        if (section) {
+             section.classList.add('active');
+             section.style.display = 'block';
             }
 
         // Ocultar el menú después de hacer clic en un enlace
-        toggleMenu();
+         menu.style.display = 'none';
         }
+
+        function showHeaderImage() {
+           const headerImage = document.getElementById('headerImage');
+           const menu = document.getElementById('verticalMenu');
+    
+        headerImage.addEventListener('click', function() {
+              menu.style.display = 'block';
+        });
+        }
+
+         // Llamar a la función para activar el clic en la imagen del encabezado
+        document.addEventListener('DOMContentLoaded', showHeaderImage);
 
     
         function addReview(event) {
